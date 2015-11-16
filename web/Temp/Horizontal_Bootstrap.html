@@ -1,0 +1,48 @@
+<div class="container">
+	<!-- BEGIN Error -->
+		<div class="alert alert-danger" role="alert">{Error}</div>
+	<!-- END Error -->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title"><i class="fa fa-edit fa-fw fa-lg"></i>&nbsp;<strong>{Title}</strong></h3>
+			<div class="pull-right"><!-- Você pode colocar outras funções aqui --></div>
+		</div>
+		<div class="panel-body">
+			<form id="formId" method="post" action="{Action}" name="{HTMLFormName}" class="form-horizontal" role="form">
+				<legend>{Title}</legend>
+				<!-- BEGIN ControlContent -->
+					<div class="form-group">
+						<span class="col-sm-3 control-label">{ControlTitle}</span>
+						<div class="col-sm-5">
+						<!-- Incluir class="form-control" e placeholder='' no input -->
+						{ControlTemplate}
+						</div>
+						<!-- Remova para texto de ajuda/referência <span class="help-block">ajuda</span> -->
+			    	</div>
+				<!-- END ControlContent -->		
+		</div>
+				<!-- BEGIN Footer -->
+				<div class="panel-footer">
+					{Buttons}
+					<div class="pull-right"><input type="submit" onclick="javascript:history.go(-1);" class="btn btn-lg btn-default" value="Cancelar"></div>
+				</div>
+				<!-- END Footer -->
+			</form>
+	</div>
+</div>
+
+<!-- Alterar classe do botão -->
+<script language="javascript">
+	$("input").addClass(function( index, currentClass ) {
+		var addedClass;
+		if ( currentClass === "Button" ) {
+			addedClass = "btn btn-lg btn-primary";
+		}
+		return addedClass;
+	});
+	<!-- Para checkbox incluir data-role="none" e liberar a linha abaixo -->
+	<!-- $("[type='checkbox']").bootstrapSwitch(); // $("[name='my-checkbox']").bootstrapSwitch(); -->
+	<!-- Para select incluir data-role="none" e liberar a linha abaixo // Adicionar a classe show-tick para ter um tick na opção -->
+	<!-- $("[type='select']").selectpicker(); // $('.selectpicker').selectpicker(); -->
+	<!-- if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) { $("[type='select']").selectpicker('mobile'); } -->
+</script>
